@@ -1,0 +1,448 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.noto-sans-kr{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+}
+
+* {
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+
+    /*rem 사용을 위해 기본 폰트 값 설정 */
+    font-size: 16px;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* body-wrap : body의 100% 크기를 갖는 div */
+.body-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+/* menu-wrap : 상단 메뉴바 wrap */
+.menu-wrap {
+    width: 100%;
+    height: 12%;
+
+    border-bottom: 1px solid #a8a8a8;
+}
+
+/* content-wrap : 콘텐츠 wrap */
+.content-wrap {
+    width: 100%;
+    height:100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* 상단 메뉴바에서 대메뉴 */
+.menu {
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+/* 상단 메뉴바에서 소메뉴 */
+.mini-menu {
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+}
+
+/* 로고 wrap */
+.logo-wrap{
+    width: 15%;
+    height: 100%;
+
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+}
+
+.logo_img{
+    width: 46%;
+    height: 70%;
+
+    background-image: url(/images/logo.png);
+    background-size: cover;
+}
+
+/* 대메뉴 컨테이너 */
+.menu_container {
+    width: 55%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.menu_container > p {
+    margin-right: 5%;
+}
+
+.menu_container > p > a {
+    font-size: calc(1rem + 2px);
+}
+
+.menu_container > p :hover {
+    color: #00CCFF;
+}
+
+/* user-wrap : 유저 정보 및 로그아웃 wrap */
+.user-wrap {
+    width: 30%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.user-wrap > p {
+	font-size: calc(1rem - 2px);
+}
+
+/* 소메뉴에서 현재 메뉴 */
+.now-mini_menu {
+    width: 20%;
+    height: 100%;
+
+    background-color: #00CCFF;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1rem;
+}
+
+/* 소메뉴에서 현재 메뉴 */
+.now-mini_menu_2 {
+    width: 20%;
+    height: 100%;
+
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1rem;
+
+    border-right: 1px solid #a8a8a8;
+}
+
+/* 타이틀과 검색박스 container */
+.contentTitle_container{
+    width: 100%;
+    height: 20%;
+
+    display: flex;
+}
+
+/* 타이틀(h1)을 감싸는 div */
+.contentTitle-wrap{
+    width: 40%;
+    height: 100%;
+}
+
+/* 타이틀 */
+.contentTitle-wrap > h1 {
+    margin-left: 46%;
+    margin-top: 18%;
+}
+
+/* search 요소들을 감싸는 wrap */
+.search-wrap {
+    width: 60%;
+    height: 100%;
+}
+
+/* searchForm */
+.search_container {
+    display: flex;
+    align-items: center;
+
+    margin-left: 38%;
+    margin-top: 12%;
+}
+
+.search_container > select {
+    width: 150px;
+    height: 30px;
+}
+
+.search_container > p {
+    font-size: 1.1rem;
+
+    margin-left: 5%;
+}
+
+.search_container > input {
+    width: 200px;
+    height: 24px;
+
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.search_container > button {
+    width: 80px;
+    height: 28px;
+}
+
+.content_container{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainContent-wrap {
+    width: 70%;
+    height: 80%;
+
+    margin-top: 2%;
+    margin-bottom:2%;
+}
+
+#mainTable{
+    width: 100%;
+    height: auto;
+
+    border-top: 1px solid black;
+    border-collapse: collapse;
+
+    margin-bottom: 2%;
+}
+
+.th_div {
+    min-height: 55px;
+    font-size: calc(1rem + 2px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.td_div {
+    min-height: 50px;
+    font-size: clac(1rem);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+th {
+    border-bottom: 1px solid #a8a8a8;
+    text-align: center;
+}
+
+td {
+    border-bottom: 1px solid #a8a8a8;
+    text-align: center;
+}
+
+.userImg {
+    background-image: url('/images/user.svg');
+
+    width: 30px;
+    height: 30px;
+
+    background-size: cover;
+    margin-right: 2%;
+    margin-left: 46%;
+}
+
+.user_funtion_horizontal {
+    height: 15px;
+
+    border-left: 1px solid #a8a8a8;
+
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 0.5%;
+}
+
+.logout :hover {
+    color: #00CCFF;
+}
+
+.dt-empty{
+    height: 50px;
+}
+
+.dt-paging nav {
+    margin-left: 85%;
+}
+
+.insertButton {
+    width: 100px;
+    height: 38px;
+
+    border-radius: 5px;
+    border: none;
+
+    background-color: #00CCFF;
+    color: white;
+
+    font-size: 1rem;
+
+    margin-left: 79%;
+}
+
+.button-wrap {
+    width: 100%;
+    height: 20%;
+    
+    margin-bottom:2%;
+}
+
+.modal_background{
+    width: 400px;
+    height: 600px;
+    position: fixed; /* 수정: absolute를 fixed로 변경 */
+    top: 50%; /* 화면 중앙에 맞추기 */
+    left: 50%; /* 화면 중앙에 맞추기 */
+    transform: translate(-50%, -50%); /* 요소의 크기 기준으로 중앙 정렬 */
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1000; /* 필요시 다른 요소 위에 표시하기 위해 */
+
+    border: 1px solid #ccc;
+}
+
+
+.container {
+    width: 70%;
+    height: 60%; /* 고정된 높이 */
+    overflow: hidden; /* 기본적으로 스크롤을 숨김 */
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    position: relative;
+}
+
+.top_container {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom_container{
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.list-container {
+    height: 100%;
+    overflow-y: auto; /* 세로 스크롤바 활성화 */
+}
+
+.month-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.month-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.month-list li:last-child {
+    border-bottom: none;
+}
+
+.left {
+    width: 30px;
+    height: 40px;
+
+    background-image: url('/images/left.svg');
+
+    background-size: cover;
+}
+
+.right {
+    width: 30px;
+    height: 40px;
+
+    background-image: url('/images/right.svg');
+
+    background-size: cover;
+}
+
+.vertical_line{
+    height: 12px;
+    border-right: 1px solid #ccc;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.bottom_container > p {
+    color: #666666;
+}
+
+.modal2_background {
+	width: 700px;
+    height: 700px;
+    position: fixed; /* 수정: absolute를 fixed로 변경 */
+    top: 50%; /* 화면 중앙에 맞추기 */
+    left: 50%; /* 화면 중앙에 맞추기 */
+    transform: translate(-50%, -50%); /* 요소의 크기 기준으로 중앙 정렬 */
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1000; /* 필요시 다른 요소 위에 표시하기 위해 */
+
+    border: 1px solid #ccc;
+}
+
+.td_div_img{
+    display: flex;
+    align-items: center;
+}
+
+.lockImg{
+    background-image: url('/images/lock.svg');  /*기본 이미지 : 잠금 이미지*/
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+
+    margin-right: 10px;
+    margin-left: 20px;
+}

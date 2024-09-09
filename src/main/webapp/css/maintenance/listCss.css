@@ -1,0 +1,534 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.noto-sans-kr {
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    text-decoration: none;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body { 
+    min-height: 100%;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+th, td, tr {
+    min-height: 40px;
+}
+
+/******************************************************************************************************************************************************************************************************************************
+    상단 메뉴바 스타일
+****************************************************************************************************************************************************************************************************/
+.topMenu_comtatiner {
+    width: 100%;
+    height: 12%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+.topMenu_top {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    border-bottom: 1px solid #a8a8a8;
+}
+
+.homepageLogo {
+    width: 12%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_div {
+    width: 125px;
+    height: 45px;
+    background: url('/images/logo.png');
+    background-size: cover;
+}
+
+.bigMenu {
+    width: 44%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.bigMenu > p {
+    font-size: 18px;
+}
+
+.bigMenu > p > a {
+    color: black;
+}
+
+.bigMenu > p > a:hover {
+    color: #00CCFF;
+}
+
+.userLogin {
+    width: 44%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.userImg {
+    width: 30px;
+    height: 30px;
+    background: url('/images/user.svg');
+    background-size: cover;
+    margin-right: 15px;
+}
+
+.user_funtion_horizontal {
+    width: 1px;
+    height: 13px;
+    border-right: 1px solid black;
+    margin-left: 8px;
+    margin-right: 10px;
+}
+
+.userLogin > p {
+    font-size: 13px;
+}
+
+.userLogin > p > a {
+    color: black;
+}
+
+.logout {
+    margin-right: 50px;
+}
+
+.logout > a:hover {
+    color: #00CCFF;
+}
+
+/******************************************************************************************************************************************************************************************************************************
+    하단 메뉴바 스타일
+****************************************************************************************************************************************************************************************************/
+.topMenu_bottom {
+    width: 100%;
+    height: 40%;
+    display: flex;
+}
+
+.miniMenu{
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00CCFF;
+}
+
+.miniMenu > p > a{
+    color: white;
+}
+
+.miniMenu_o {
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-right: 1px solid #ccc;
+}
+
+.miniMenu_o > p > a {
+    color: black;
+}
+
+/******************************************************************************************************************************************************************************************************************************
+    메인 컨텐츠 스타일
+****************************************************************************************************************************************************************************************************/
+.mainContent_container {
+    width: 100%;
+    height: 88%;
+}
+
+.topContent {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.topTitle {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topTitle > h1 {
+    margin-right: 33%;
+    margin-top: 90px;
+}
+
+.topTitle > p {
+    margin-left: 20px;
+    margin-top: 100px;
+}
+
+.searchContainer {
+    width: 60%;
+    height: 100%;
+    display: flex;
+}
+
+.searchContainer > form {
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.searchOption {
+    width: 150px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.searchBox > input {
+    width: 225px;
+    height: 26px;
+    margin-left: 10px;
+    border: none;
+    border-bottom: 1.5px solid black;
+}
+
+.searchBox > input:focus {
+    outline: none;
+}
+
+.searchButton {
+    width: 80px;
+    height: 35px;
+    background-color: #a8a8a8;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 220px;
+}
+
+.contentArea {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+}
+
+.contentTable {
+    width: 1000px;
+    height: 40px;
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+.th_div {
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.td_div {
+    min-width: 284px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentTable td, .contentTable th {
+    border-bottom: 1px solid #ccc;
+    border-right: none;
+    border-left: none;
+    padding: 8px;
+}
+
+/******************************************************************************************************************************************************************************************************************************
+    버튼 스타일
+****************************************************************************************************************************************************************************************************/
+.buttonArea {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.insertButton {
+    width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8a8;
+    color: white;
+    margin-right: 1%;
+}
+
+.cancleButton {
+    width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8a8;
+    color: white;
+    margin-right: 25%;
+}
+
+.beforeButton {
+    width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8a8;
+    color: white;
+    margin-right: 1%;
+}
+
+/******************************************************************************************************************************************************************************************************************************
+    등록 폼 스타일
+****************************************************************************************************************************************************************************************************/
+.selectStyle {
+    width: 228px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.inputStyle {
+    width: 220px;
+    height: 24px;
+    margin-left: 20px;
+}
+
+.textStyle {
+    margin-left: 20px;
+    border: 0.5px solid #a8a8a8;
+    width: 720px;
+    resize: none;
+}
+
+#table1, #table2, #table3, #table4, #table5, #table6, #table7,#table8,#table9,#table10,#table11 {
+    width: 1000px;
+    border: 1px solid #ccc;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid black;
+}
+
+.th_style {
+    background-color: #ccc;
+    height: 40px;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    resize: none;
+    padding: 8px;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    outline: none;
+}
+
+/* input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 16px;
+} */
+
+#LIST_TITLE{
+	outline:none;
+	width:600px;
+}
+
+#CHECKER, #CHECKER_TEL{
+	outline:none;
+	width:200px;
+}
+
+.buttonArea {
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+.listType_contianer{
+    display: flex;
+    margin-bottom: 50px;
+    align-items: center;
+}
+
+.listType_contianer > select {
+    height: 30px;
+    margin-left: 10px;
+}
+
+
+.service_modal{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-area{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#add-table{
+    width: 250px;
+    height: 30px;
+    background-color: #CCC;
+    margin-right: 50px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+#delete-table{
+    width: 250px;
+    height: 30px;
+    background-color: #CCC;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+#updateButton {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8a8;
+    color: white;
+    margin-right: 1%;
+}
+
+#deleteButton {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #a8a8a8;
+    color: white;
+    margin-right:26%;
+}
+
+
+#insertButton:hover {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00CCFF;
+    color: white;
+}
+
+#cancleButton:hover {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00CCFF;
+    color: white;
+}
+
+#updateButton:hover {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00CCFF;
+    color: white;
+}
+
+#deleteButton:hover {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00CCFF;
+    color: white;
+}
+
+#nextButton:hover {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00CCFF;
+    color: white;
+}
+
+#beforeButton:hover {
+	width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00CCFF;
+    color: white;
+}

@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+.noto-sans-kr{
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+}
+
+*{
+    text-decoration: none;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+html {
+    /* body의 크기를 화면 전체로 하기 위한 부모 설정 */
+    height: 100%;
+}
+
+body { 
+    /* 로그인 배경화면 그라데이션 및 크기 설정 */
+    min-height: 100%;
+    margin: 0; /* 마진 0을 주지 않으면 각 방향에 마진 8이 생기게 됨 => 마진 0 설정으로 전체 화면 사용 가능 */
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+th, td, tr{
+    min-height: 40px;
+}
+
+textarea{
+	resize: none;
+}
+
+
+p {
+  white-space: pre-line;
+}
+/******************************************************************************************************************************************************************************************************************************
+    상단 메뉴바 스타일
+******************************************************************************************************************************************************************************************************************************/
+
+/* 상단 메뉴바 컨테이너 */
+.topMenu_comtatiner {
+    width: 100%;
+    height: 12%;
+
+    display: flex;
+    flex-direction: column;
+
+    border-bottom: 1px solid #a8a8a8;
+}
+
+/* 상단 메뉴바 - 홈페이지 로고 및 대메뉴, 로그인/로그아웃 */
+.topMenu_top {
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+
+    border-bottom: 1px solid #a8a8a8;
+}
+
+/* 상단 메뉴바 - 로고 컨테이너 */
+.homepageLogo {
+    width: 12%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* 상단 메뉴바 - 로고 */
+.logo_div {
+    width: 125px;
+    height: 45px;
+
+    background: url('/images/logo.png');
+    background-size: cover;
+}
+
+/* 상단 메뉴바 - 대메뉴 div*/
+.bigMenu {
+    width: 44%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* 상단 메뉴바 - 대메뉴 p 태그 */
+.bigMenu > p {
+    font-size: 18px;
+}
+
+/* 상단 메뉴바 - 대메뉴 a 태그 */
+.bigMenu > p > a {
+    color: black;
+}
+
+/* 상단 메뉴바 - 대메뉴 hover 효과 */
+.bigMenu > p > a:hover {
+    color: #00CCFF;
+}
+
+/* 상단 메뉴바 - 로그인/ 로그아웃 컨테이너 */
+.userLogin {
+    width: 44%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* 상단 메뉴바 - 유저 이미지 */
+.userImg {
+    width: 30px;
+    height: 30px;
+
+    background: url('/images/user.svg');
+    background-size: cover;
+
+    margin-right: 15px;
+}
+
+/* 상단 메뉴바 - 세로 구분선 */
+.user_funtion_horizontal {
+    width: 1px;
+    height: 13px;
+
+    border-right: 1px solid black;
+
+    margin-left: 8px;
+    margin-right: 10px;
+}
+
+/* 상단 메뉴바 - p 태그 */
+.userLogin > p {
+    font-size: 13px;
+}
+
+/* 상단 메뉴바 -  a 태그 */
+.userLogin > p > a{
+    color: black;
+}
+
+
+/* 상단 메뉴바 - 로그아웃 */
+.logout {
+    margin-right: 50px;
+}
+
+/* 상단 메뉴바 - 로그아웃 hover 효과 */
+.logout >a:hover {
+    color: #00CCFF;
+}
+
+
+
+/******************************************************************************************************************************************************************************************************************************
+    하단 메뉴바 스타일
+******************************************************************************************************************************************************************************************************************************/
+
+/* 하단 메뉴바 - 컨테이너 */
+.topMenu_bottom{
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+}
+
+/* 하단 메뉴바 - 소메뉴 배경 */
+.miniMenu{
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f8f7f7;
+
+    border-right: 1px solid #CCC;
+}
+
+.miniMenu > p {
+    color: black;
+}
+
+.miniMenu:hover {
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00CCFF;
+    border: none;
+}
+
+.miniMenu:hover > p {
+    color: white;
+}
+
+.miniMenu_n{
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f8f7f7;
+
+    border-right: 1px solid #CCC;
+}
+
+.miniMenu_n:hover {
+    width: 20%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00CCFF;
+    border: none;
+}
+
+.miniMenu_n:hover > p {
+    color: white;
+}
+/******************************************************************************************************************************************************************************************************************************
+    메인 컨텐츠 스타일
+******************************************************************************************************************************************************************************************************************************/
+
+/* 메인 콘텐츠 컨테이너 */
+.mainContent_container{
+    width: 100%;
+    height: 88%;
+}
+
+/* 메인 컨텐츠 - 상단 컨텐츠 컨테이너 */
+.topContent{
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* 메인 컨텐츠 - 상단 타이틀 컨테이너 */
+.topTitle {
+    width: 40%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+/* 메인 컨텐츠 - 상단 타이틀 */
+.topTitle > h1 {
+    margin-left: 500px;
+    margin-top: 105px;
+
+}
+
+/* 메인 컨텐츠 - 검색 기능 컨테이너 */
+.searchContainer {
+    width: 60%;
+    height: 100%;
+
+    display: flex;
+}
+
+/* 메인 컨텐츠 - 폼 내부 요소 정렬 */
+.searchContainer > form {
+    width: 100%;
+    height: 100%;
+    
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* 메인 컨텐츠 - 검색 셀렉트 박스 */
+.searchOption{
+    width: 150px;
+    height: 30px;
+
+    margin-right: 20px;
+}
+
+/* 메인 컨텐츠 - 검색어 입력란 컨테이너 */
+.searchBox {
+    display: flex;
+    align-items: center;
+
+    margin-right: 20px;
+}
+
+/* 메인 컨텐츠 - 검색어 입력란 */
+.searchBox > input {
+    width: 225px;
+    height: 26px;
+
+    margin-left: 10px;
+
+    border: none;
+    border-bottom: 1.5px solid black;
+}
+
+/* 검색창 클릭 시 테두리 제거 */
+.searchBox > input:focus {
+    outline: none;
+}
+
+/* 메인 컨텐츠 - 검색 버튼 스타일 */
+.searchButton{
+    width: 80px;
+    height: 35px;
+
+    background-color: #a8a8a8;
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 220px;
+}
+
+/* 메인 컨텐츠 - 테이블 컨테이너 */
+.contentArea{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 메인 컨텐츠 - 테이블 */
+.contentTable{
+    width: 1000px;
+    height: 40px;
+
+    border-top: 1px solid black;
+    border-collapse: collapse;
+}
+
+/* 메인 컨텐츠 - 테이블 요소 */
+.th_div{
+    min-height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.td_div{
+    min-height: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 메인 컨텐츠 - 목록 테이블 글씨(a태그) */
+.td_div > a {
+	color:black;
+}
+
+.contentTable td, .contentTable th {
+    border-bottom: 1px solid #ccc; /* 모든 셀에 회색 실선 선 */
+
+    border-right: none;
+    border-left: none;
+
+    padding: 8px; /* 내부 공간 추가 */
+}
+
+
+/******************************************************************************************************************************************************************************************************************************
+    버튼 스타일
+******************************************************************************************************************************************************************************************************************************/
+
+/* 하단 - 버튼 컨테이너 */
+.buttonArea {
+    width: 100%;
+    height: 25%;
+
+    display: flex;
+    justify-content: flex-end;
+
+    margin-top: 2%;
+    margin-bottom: 8%;
+}
+
+/* 하단 - 좌측 버튼 컨테이너 => 버튼을 2개만 사용 하는 경우 해당 div와 스타일 주석 처리 */
+.leftButton {
+    width: 50%;
+    height: 100%;
+} 
+
+/* 하단 - 우측 버튼 컨테이너 => 버튼을 2개만 사용 하는 경우 해당 div와 스타일 주석 처리 */
+.rightButton {
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    justify-content: flex-end;
+} 
+
+/* 하단 - 버튼 */
+.insertButton {
+    width: 100px;
+    height: 38px;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00CCFF;
+    color: white;
+
+    margin-right: 1%;
+}
+
+/* 하단 - 취소 버튼 */
+.cancleButton {
+    width: 100px;
+    height: 38px;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #a8a8a8;
+    color: white;
+
+    /*margin-right: 25%;*/  /*취소 버튼이 좌측으로 가는 경우 주석 처리*/
+
+    /* 취소 버튼이 좌측으로 가는 경우 아래 주석 처리 제거 */
+    margin-left: 52%; 
+}
+
+/* 하단 - 수정 버튼 */
+.updateButton {
+    width: 100px;
+    height: 38px;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00CCFF;
+    color: white;
+
+    margin-right: 52%;
+}
+
+/* 하단 - 삭제 버튼 */
+.deleteButton {
+    width: 100px;
+    height: 38px;
+
+    border-radius: 5px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #a8a8a8;
+    color: white;
+
+    margin-right: 48%;
+}
+
+
+/******************************************************************************************************************************************************************************************************************************************************
+
+기타 스타일
+
+******************************************************************************************************************************************************************************************************************************************************/
+
+.td_div_img{
+    display: flex;
+}
+
+.lockImg{
+    /* background-image: url('/image/lock.svg');  기본 이미지 : 잠금 이미지 */
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+
+    margin-right: 10px;
+    margin-left: 20px;
+}

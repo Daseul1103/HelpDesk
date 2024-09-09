@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+/* 화면 전체 설정 ( 와일드 카드 or 백그라운드 설정 ) */
+
+/* 폰트 불러오기 설정 - 본고딕체 */
+@import url('//fonts.googleapis.com/earlyaccess/notosanskr.css');
+
+*{
+    /* 폰트 설정 - 본고딕체 */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+html {
+    /* body의 크기를 화면 전체로 하기 위한 부모 설정 */
+    height: 100%;
+}
+
+body { 
+    /* 로그인 배경화면 그라데이션 및 크기 설정 */
+    background: linear-gradient(to right, #FF9900 , #00CCFF);
+    min-height: 100%;
+    margin: 0; /* 마진 0을 주지 않으면 각 방향에 마진 8이 생기게 됨 => 마진 0 설정으로 전체 화면 사용 가능 */
+
+    /* 로그인 박스를 중앙 정렬 하기 위한 설정 */
+    display: flex;  /* flex 기능 사용 선언 */
+    /* 중앙 정렬 속성들 => .join_choice_background만 수직/수평 중앙 정렬 됨 */
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+}
+
+a{
+    text-decoration: none; /* a태그 밑줄 없애기 */
+    color: black; /* a태그 색상 변경하기 */
+}
+
+
+
+/* 선택지 박스 설정 */
+
+/* 선택지 박스 > 배경화면 색상 및 크기 설정 */
+.join_choice_background{
+    /* div 크기 설정 */
+    width: 801px;
+    height: 350px;
+
+    background-color: white; /* 선택지 박스 배경화면 색상 변경 */
+
+    border-radius: 25px; /* 선택지 박스 모서리 둥글게 해주는 설정 */
+
+    /* 정렬 설정 */
+    display: flex;
+    flex-direction: row; /* 가로 정렬 */
+}
+
+/* 선택지 박스 > 일반 사용자 이미지 및 이동 링크 설정 */
+.normal_choice {
+    /* 크기 설정 */
+    width: 400px; /* (전체 크기 - 세로 구분선 두께 값)/2 */
+    height: 100%;
+
+     /* 안에 요소들이 세로 정렬 될 수 있게 정렬 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 선택지 박스 > 일반 사용자 > 사진 비율 / 위치 조정 설정 */
+.normal_choice_image{
+
+    /* 위치 조정 설정 */
+    margin-top: 80px;
+    margin-bottom: -10px;
+}
+
+/* 선택지 박스 > 일반 사용자 > 일반 사용자 회원가입 링크 스타일 */
+.normal_choice a:hover {
+    color: #FF9900;
+}
+
+/* 선택지 박스 > 세로 구분선 관련 설정 => 원하는 두께와 길이 만큼 div 생성 후 border 처리*/
+.vertical_line{
+    /* 선의 두께 및 길이 설정 */
+    width: 1px;
+    height: 250px;
+
+    /* 세로 구분 선 위치 조절 설정 */
+    margin-top: 50px;
+
+    /* 선 색상 설정 */
+    border-right: 1px solid #999999;
+}
+
+/* 선택지 박스 > 내부 사용자 이미지 및 이동 링크 설정 */
+.employee_choice{
+    /* 크기 설정 */
+    width: 400px; /* (전체 크기 - 세로 구분선 두께 값)/2 */
+    height: 100%;
+
+    /* 안에 요소들이 세로 정렬 될 수 있게 정렬 설정 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 선택지 박스 > 내부 사용자 > 사진 비율 / 위치 조정 설정 */
+.employee_choice_image{
+    /* 크기 설정 */
+    width: 100px;
+    height: 100px;
+
+    /* 위치 조정 설정 */
+    margin-top: 90px;
+}
+
+/* 선택지 박스 > 내부 사용자 > 내부 사용자 회원가입 링크 스타일 */
+.employee_choice a:hover {
+    color: #00CCFF;
+}
+
+/* 뒤로가기 버튼 */
+.back_button{
+    /* 버튼 스타일 설정 */
+    background-color: transparent;
+    border: none;
+
+    /* 버튼 위치 조정 */
+    position: absolute;
+    right: 93%;
+    top: 88%;
+}

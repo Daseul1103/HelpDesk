@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.hivesystem.helpdesk.mapper.HelpDeskMapper">
+    	<!-- 01. 헬프 데스크 목록 조회 -->
+    <select id="listHelpDesk" resultType="kr.co.hivesystem.helpdesk.vo.HelpDeskVO">
+        SELECT BNO,HELP_TITLE,HELP_WRITER,REG_DATE,ANSWER
+        FROM HELPDESK_INFO
+        
+        <!-- where 절을 include 태그로 삽입 -->
+        <include refid="search"></include>
+        ORDER BY BNO DESC
+    </select>
+    
+    <!-- sql 조각 code -->
+    <sql id="search">
+        <choose>
+            <!-- 검색 옵션이 전체 검색일 때 -->
+            <when test="searchOption == 'all'">
+                WHERE HELP_TITLE LIKE '%'||#{keyword}||'%'
+                OR HELP_WRITER LIKE '%'||#{keyword}||'%'
+                OR REG_DATE LIKE '%'||#{keyword}||'%'
+            </when>
+            
+            <!-- 전체 검색이 아닌 경우 -->
+            <otherwise>
+                WHERE ${searchOption} LIKE CONCAT('%', #{keyword}, '%')
+            </otherwise>
+        </choose>
+    </sql>
+    
+    <select id="myList" resultType="kr.co.hivesystem.helpdesk.vo.HelpDeskVO">
+        SELECT BNO,HELP_TITLE,HELP_WRITER,REG_DATE,ANSWER
+        FROM HELPDESK_INFO
+        
+        where MEMBER_ID = #{nowUser}
+        
+        ORDER BY BNO DESC
+    </select>
+    
+    <select id="myAnswer" resultType="kr.co.hivesystem.helpdesk.vo.HelpDeskVO">
+        SELECT BNO,HELP_TITLE,HELP_WRITER,REG_DATE,ANSWER,REP_DATE
+        FROM HELPDESK_INFO
+        
+        where ANSWER_ID = #{nowUser}
+        
+        ORDER BY BNO DESC
+    </select>
+    
+    <!-- 02. 헬프 데스크 등록 -->
+    <insert id="insertHelpDesk">
+    	INSERT INTO HELPDESK_INFO(BNO,HELP_TITLE,HELP_WRITER,REG_DATE,HELP_CONTENT,MEMBER_ID,WRITER_TEL,WRITER_COMPANY,CATEGORY)
+    	VALUES((SELECT NVL(MAX(BNO)+1, 1) FROM HELPDESK_INFO AS subtable),#{HELP_TITLE},#{HELP_WRITER},DATE(NOW()),#{HELP_CONTENT},
+    	#{MEMBER_ID},#{WRITER_TEL},#{WRITER_COMPANY},#{CATEGORY})
+    
+    </insert>
+    
+    <update id="insertEmp">
+    	UPDATE HELPDESK_INFO SET
+    	REP_DATE= CURDATE(), ANSWER_CONTENT = #{ANSWER_CONTENT}, ANSWER =#{ANSWER}, ANSWER_ID =#{ANSWER_ID}
+    	WHERE BNO = #{BNO}
+    </update>
+    
+    <!-- 03. 헬프 데스크 상세 보기 -->
+    <select id="viewHelpDesk" resultType="kr.co.hivesystem.helpdesk.vo.HelpDeskVO">
+        SELECT *
+        FROM HELPDESK_INFO
+        WHERE BNO = #{BNO}
+    </select>
+    
+    <select id="viewEmp" resultType="kr.co.hivesystem.helpdesk.vo.HelpDeskVO">
+    	SELECT *
+        FROM HELPDESK_INFO
+        WHERE BNO = #{BNO}
+    </select>
+    
+    <!-- 04. 헬프 데스크 수정하기 -->
+    <update id="updateHelpDesk">
+        UPDATE HELPDESK_INFO SET
+        HELP_TITLE= #{HELP_TITLE},HELP_CONTENT= #{HELP_CONTENT}
+        WHERE BNO = #{BNO}
+    </update>
+    
+    <!-- 답변 삭제하기 -->
+  	<update id="deleteEmp">
+  		UPDATE HELPDESK_INFO SET
+  		REP_DATE = NULL, ANSWER = NULL, ANSWER_ID = NULL, ANSWER_CONTENT = NULL
+  		WHERE BNO = #{BNO}
+  	</update>
+  	
+  	<!-- 내부 사용자 수정 -->
+  	<update id="updateEmp">
+  		UPDATE HELPDESK_INFO SET
+  		ANSWER_CONTENT = #{ANSWER_CONTENT}
+  		WHERE BNO = #{BNO}    
+  	</update>
+  	
+    <!-- 05. 헬프 데스크 삭제하기 -->
+    <delete id="deleteHelpDesk">
+        DELETE FROM HELPDESK_INFO
+        WHERE BNO = #{BNO}
+    </delete>
+</mapper>

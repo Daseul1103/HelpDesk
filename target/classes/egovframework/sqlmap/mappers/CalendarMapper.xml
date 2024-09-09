@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.hivesystem.calendar.mapper.CalendarMapper">
+	
+    <select id="readDate" resultType="kr.co.hivesystem.calendar.vo.CalendarVO">
+        SELECT *
+        FROM CALENDAR_INFO
+        WHERE CALENDAR_WRITERID = #{nowUser}
+    </select>
+    
+    <insert id="insertDate">
+        INSERT INTO CALENDAR_INFO(CALENDAR_TITLE, CALENDAR_WRITER, CALENDAR_WRITERID, CALENDAR_DISCRIPTION,
+        START_DATE, END_DATE, ALLDAY)
+        VALUES(#{CALENDAR_TITLE}, #{CALENDAR_WRITER}, #{CALENDAR_WRITERID}, #{CALENDAR_DISCRIPTION}, 
+        #{START_DATE}, #{END_DATE}, #{ALLDAY})
+    </insert>
+    
+    <select id="readEvent" resultType="kr.co.hivesystem.calendar.vo.CalendarVO">
+        SELECT *
+        FROM CALENDAR_INFO
+        WHERE CALENDAR_ID = #{ID}
+    </select>
+    
+    <update id="updateDate">
+        UPDATE CALENDAR_INFO SET
+        CALENDAR_TITLE = #{CALENDAR_TITLE}, START_DATE = #{START_DATE}, END_DATE = #{END_DATE},
+        CALENDAR_DISCRIPTION = #{CALENDAR_DISCRIPTION}
+        WHERE CALENDAR_ID = #{CALENDAR_ID}
+        
+    </update>
+    
+    <delete id="deleteDate">
+        DELETE FROM CALENDAR_INFO
+        WHERE CALENDAR_ID = #{ID}
+    </delete>
+</mapper>
